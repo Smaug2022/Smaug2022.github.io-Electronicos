@@ -218,15 +218,12 @@ $(document).ready(function () {
 
   //ELIMINAR PRODUCTO
   $(document).on("click", ".eliminar-producto", function (e) {
-    fetch(
-      "http://localhost:8080/productos/eliminarProducto/" + e.target.value,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("http://localhost:8080/productos/borrarProducto/" + e.target.value, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((resData) => {
         alert(resData);
